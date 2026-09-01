@@ -1,49 +1,59 @@
-# atlas-assistant
-# Atlas — Personal Voice Assistant
+# 🤖 Atlas — Personal Voice Assistant
 
 <p align="center">
   <img src="demo.gif" width="600" alt="Atlas demo"/>
 </p>
 
-Atlas is a wake-word activated voice assistant built entirely in Python. It listens for a spoken activation phrase, interprets voice commands, and responds with natural speech.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.11-blue?logo=python" />
+  <img src="https://img.shields.io/badge/status-active-brightgreen" />
+  <img src="https://img.shields.io/badge/license-MIT-lightgrey" />
+</p>
 
-## Features
+> A wake-word activated voice assistant built in Python — opens websites, plays music, reads live news, and answers open-ended questions using AI.
 
-- Wake-word activation — responds only when addressed directly
-- Site launcher for common web destinations (Google, YouTube, Instagram, and more)
-- Local music playback from a personal song library
-- Built-in responses (jokes, status checks, casual conversation)
-- Natural voice output via Google Text-to-Speech
+## ✨ Features
 
-## Tech Stack
+- 🎙️ **Wake-word activation** — responds only when you say "Atlas"
+- 🌐 **Site launcher** — Google, YouTube, Instagram, and more
+- 🎵 **Music playback** — plays from a local song library
+- 📰 **Live news headlines** — pulled from NewsAPI
+- 🧠 **AI fallback** — open-ended questions answered via OpenAI
+- 🔊 **Natural voice output** — powered by Google Text-to-Speech
 
-Python, speech_recognition, gTTS, pygame, requests, python-dotenv
+## 🛠️ Tech Stack
 
-## Setup
+`Python` · `speech_recognition` · `gTTS` · `pygame` · `OpenAI API` · `NewsAPI`
+
+## 🚀 Setup
 
 \`\`\`bash
 git clone https://github.com/yourusername/atlas-voice-assistant.git
 cd atlas-voice-assistant
 pip install -r requirements.txt
+\`\`\`
+
+Create a `.env` file:
+\`\`\`
+NEWSAPI_KEY=your_key_here
+OPENAI_API_KEY=your_key_here
+\`\`\`
+
+Run it:
+\`\`\`bash
 python atlas.py
 \`\`\`
 
-## Example Commands
+## 🗣️ Example Commands
 
-| Command | Action |
+| Say this | Atlas does this |
 |---|---|
-| "Atlas" | Activates the assistant |
+| "Atlas" | Wakes up |
 | "open google" | Opens Google |
-| "play [song name]" | Plays from the local music library |
-| "tell me a joke" | Tells a joke |
+| "play [song]" | Plays from your library |
+| "news" | Reads today's headlines |
+| "tell me a joke" | Cracks a joke |
 | "stop" | Ends the session |
 
-## Roadmap
-
-- Live news headline integration
-- AI-powered responses for open-ended questions
-- Multi-turn conversation support
-
-## License
-
+## 📄 License
 MIT
