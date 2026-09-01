@@ -1,4 +1,4 @@
-# 🤖 Atlas — Personal Voice Assistant
+#  Atlas — Personal Voice Assistant
 
 <p align="center">
   <img src="demo.gif" width="600" alt="Atlas demo"/>
@@ -14,18 +14,18 @@
 
 ## ✨ Features
 
-- 🎙️ **Wake-word activation** — responds only when you say "Atlas"
-- 🌐 **Site launcher** — Google, YouTube, Instagram, and more
-- 🎵 **Music playback** — plays from a local song library
-- 📰 **Live news headlines** — pulled from NewsAPI
-- 🧠 **AI fallback** — open-ended questions answered via OpenAI
-- 🔊 **Natural voice output** — powered by Google Text-to-Speech
+-  **Wake-word activation** — responds only when you say "Atlas"
+-  **Site launcher** — Google, YouTube, Instagram, and more
+-  **Music playback** — plays from a local song library
+-  **Live news headlines** — pulled from NewsAPI
+-  **AI fallback** — open-ended questions answered via OpenAI
+-  **Natural voice output** — powered by Google Text-to-Speech
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
-`Python` · `speech_recognition` · `gTTS` · `pygame` · `OpenAI API` · `NewsAPI`
+`Python` · `speech_recognition` · `gTTS` · `pygame` · `NewsAPI`
 
-## 🚀 Setup
+##  Setup
 
 \`\`\`bash
 git clone https://github.com/yourusername/atlas-voice-assistant.git
@@ -44,7 +44,7 @@ Run it:
 python atlas.py
 \`\`\`
 
-## 🗣️ Example Commands
+##  Example Commands
 
 | Say this | Atlas does this |
 |---|---|
