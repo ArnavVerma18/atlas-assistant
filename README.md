@@ -1,6 +1,6 @@
 # Atlas — Personal Voice Assistant
 
-[**Live demo page →**](https://ArnavVerma18.github.io/atlas-voice-assistant/)
+[**Live demo page →**](https://arnavverma18.github.io/atlas-assistant/)
 
 <p align="center">
   <img src="demo.gif" width="600" alt="Atlas demo"/>
