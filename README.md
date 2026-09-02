@@ -1,59 +1,40 @@
-#  Atlas — Personal Voice Assistant
+# Atlas — Personal Voice Assistant
 
 <p align="center">
   <img src="demo.gif" width="600" alt="Atlas demo"/>
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.11-blue?logo=python" />
-  <img src="https://img.shields.io/badge/status-active-brightgreen" />
-  <img src="https://img.shields.io/badge/license-MIT-lightgrey" />
-</p>
+Atlas is a wake-word activated voice assistant built entirely in Python. It listens for a spoken activation phrase, interprets natural voice commands, and responds with synthesized speech — combining web automation, live lookups, and a growing command library into a single conversational interface.
 
-> A wake-word activated voice assistant built in Python — opens websites, plays music, reads live news, and answers open-ended questions using AI.
+## Features
 
-## ✨ Features
+- **Wake-word activation** — stays idle until addressed directly by name
+- **Website launcher** — opens Google, YouTube, Facebook, Instagram, and more on command
+- **Wikipedia lookups** — ask "who is..." or "what is..." for concise spoken summaries, with disambiguation handling for ambiguous queries
+- **Local music playback** — plays songs from a personal library by voice
+- **Built-in personality** — jokes, identity questions, and casual conversation
+- **Natural voice output** — powered by Google Text-to-Speech (gTTS)
+- **Time-aware greetings** — responds to "good morning," "good evening," and "good night"
 
--  **Wake-word activation** — responds only when you say "Atlas"
--  **Site launcher** — Google, YouTube, Instagram, and more
--  **Music playback** — plays from a local song library
--  **Live news headlines** — pulled from NewsAPI
--  **AI fallback** — open-ended questions answered via OpenAI
--  **Natural voice output** — powered by Google Text-to-Speech
+## Tech Stack
 
-##  Tech Stack
+`Python` · `speech_recognition` · `gTTS` · `pygame` · `wikipedia` · `requests` · `python-dotenv` · `colorama`
 
-`Python` · `speech_recognition` · `gTTS` · `pygame` · `NewsAPI`
+## How It Works
 
-##  Setup
+Atlas runs a continuous listening loop:
 
-\`\`\`bash
+1. Waits silently for the wake word ("Atlas")
+2. On activation, listens for a spoken command
+3. Routes the command through a matching engine (site launcher, Wikipedia lookup, music library, or built-in responses)
+4. Converts the response to speech and plays it back
+
+## Setup
+
+```bash
 git clone https://github.com/yourusername/atlas-voice-assistant.git
 cd atlas-voice-assistant
 pip install -r requirements.txt
-\`\`\`
+```
 
-Create a `.env` file:
-\`\`\`
-NEWSAPI_KEY=your_key_here
-OPENAI_API_KEY=your_key_here
-\`\`\`
-
-Run it:
-\`\`\`bash
-python atlas.py
-\`\`\`
-
-##  Example Commands
-
-| Say this | Atlas does this |
-|---|---|
-| "Atlas" | Wakes up |
-| "open google" | Opens Google |
-| "play [song]" | Plays from your library |
-| "news" | Reads today's headlines |
-| "tell me a joke" | Cracks a joke |
-| "stop" | Ends the session |
-
-## 📄 License
-MIT
+Create a `.env` file in the project root for any API-dependent features:
