@@ -11,7 +11,6 @@
 <p align="center">
   <img src="demo.gif" width="600" alt="Atlas demo"/>
 </p>
-
 Atlas is a wake-word activated voice assistant built entirely in Python. It listens for a spoken activation phrase, interprets natural voice commands, and responds with synthesized speech — combining web automation, live lookups, and a growing command library into a single conversational interface.
 
 ## Features
