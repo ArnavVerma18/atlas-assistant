@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://arnavverma18.github.io/atlas-assistant/">
-    <img src="https://img.shields.io/badge/_CLICK_TO_EXPLORE_ATLAS-111827?style=for-the-badge&labelColor=00C9FC" alt=(https://arnavverma18.github.io/atlas-assistant/)">
+    <img src="https://img.shields.io/badge/CLICK_TO_EXPLORE_ATLAS-00D9FF?style=for-the-badge&labelColor=0D1117" alt="Explore ATLAS">
   </a>
 </p>
 
