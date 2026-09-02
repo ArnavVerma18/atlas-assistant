@@ -44,3 +44,9 @@ pip install -r requirements.txt
 ```
 
 Create a `.env` file in the project root for any API-dependent features:
+
+Support the Project
+
+If you like ATLAS, consider giving the repository a ⭐.
+
+It helps support the project and motivates future development.
