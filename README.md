@@ -1,6 +1,6 @@
 # Atlas 
 
-<p align="center">
+
   <a href="https://arnavverma18.github.io/atlas-assistant/">
     <img src="https://img.shields.io/badge/CLICK_TO_EXPLORE_ATLAS-0B0A0F?style=for-the-badge&labelColor=0D1117" alt="Explore ATLAS">
   </a>
