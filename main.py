@@ -2,29 +2,31 @@ import speech_recognition as sr
 import webbrowser
 import music
 import requests
+import wikipedia
 import os
 from dotenv import load_dotenv
 from gtts import gTTS
 import pygame
+from pydub import AudioSegment
+from pydub.playback import play
+
 from colorama import init, Fore, Style
 load_dotenv()  # get the values of api key
+
+wikipedia.set_lang("en")
 
 newsapi = os.getenv("NEWSAPI_KEY")
 
 
 init(autoreset=True)
 
-def speak(text):
-    print(Fore.CYAN + "Atlas:" + Style.RESET_ALL, text)
-
-
-
+    # VOICE -------
 
 recognizer = sr.Recognizer()
 pygame.mixer.init()
 activate_word = "atlas"
 def speak(text):
-    print("Atlas:", text)
+    print(Fore.CYAN + "Atlas:" + Style.RESET_ALL, text)
     tts = gTTS(text=text, lang='en', slow=False)
     tts.save("temp_voice.mp3")
     pygame.mixer.music.load("temp_voice.mp3")
@@ -36,6 +38,40 @@ def speak(text):
 
 
     # COMMANDS ----
+def extract_topic(command):
+    triggers = ["who is", "what is", "tell me about", "what's", "who's"]
+    for phrase in triggers:
+        if phrase in command:
+            topic = command.split(phrase, 1)[1].strip()
+            # strip trailing filler words
+            for filler in ["please", "for me", "quickly"]:
+                topic = topic.replace(filler, "").strip()
+            return topic
+    return None
+
+
+def speak_summary(text, max_chars=400):
+    if len(text) > max_chars:
+        text = text[:max_chars].rsplit('.', 1)[0] + "."
+    speak(text)
+
+
+def get_wikipedia_summary(query, sentences=2):
+    try:
+        # catching minor misspellings/mishearings from sr 
+        summary = wikipedia.summary(query, sentences=sentences, auto_suggest=True)
+        return summary
+    except wikipedia.exceptions.DisambiguationError as e:   
+        options = e.options[:4]
+        return f"There are a few things that could mean. Did you mean {', or '.join(options)}?"
+    except wikipedia.exceptions.PageError:
+        return f"I couldn't find anything on Wikipedia about {query}."
+    except Exception as e:
+        print(f"Wikipedia error: {e}")
+        return "Something went wrong searching Wikipedia."
+
+
+
 
 def process_command(command):
     command = command.lower()
@@ -47,8 +83,17 @@ def process_command(command):
 
     if "how are you" in command.lower() or "how r u" in command.lower():
         speak("I am doing great, thanks for asking.")
-        
-    
+    if "good morning" in command.lower():
+            speak("Good Morning.")
+            print("Good Morning.")
+    if "good evening" in command.lower():
+            speak("Good Evening.")
+            print("Good Evening.")
+    if "good night" in command.lower():
+            speak("Good Night.")
+            print("Good Night.")
+    if "who r u" in command.lower() or "who are you" in command.lower():
+        speak("I'm Atlas — a voice assistant built to help you out, Think of me as your personal assistant, minus the coffee breaks. One command at a time.")
     elif "open google" in command.lower():
             webbrowser.open("https://www.google.com/")
             speak("Opening Google")
@@ -61,11 +106,9 @@ def process_command(command):
     elif "open youtube" in command.lower():
             webbrowser.open("https://www.youtube.com/")
             speak("Opening Youtube")
-    elif "open aaj tak" in command.lower():
+    elif "what is the news" in command.lower() or "tell me the news" in command.lower():
             webbrowser.open("https://www.aajtak.com/")
-            speak("Opening AajTak")
-    elif "Show human heart" in command.lower():
-            webbrowser.open("https://my.clevelandclinic.org/-/scassets/images/org/health/articles/21704-heart-overview-outside")
+            speak("Opening News")
     elif "tell me a joke" in command:
         import random
         jokes = [
@@ -81,6 +124,15 @@ def process_command(command):
     elif "what can you do" in command:
         speak("I can open websites, play music, read the news, and answer questions. Just ask.")
 
+    elif any(phrase in command for phrase in ["who is", "what is", "tell me about", "who's", "what's"]):
+        topic = extract_topic(command)
+        if topic:
+            speak("Let me look that up.")
+            answer = get_wikipedia_summary(topic)
+            speak(answer)
+        else:
+            speak("I didn't catch what you wanted to know about.")
+
         # Commands for MUSIC LIBRARY ---------
 
 
@@ -92,6 +144,8 @@ def process_command(command):
                 webbrowser.open(link)
             else:
                 speak(f"I couldn't find {song} in your music library.")
+
+    # NEWS -----
 
     elif "news" in command.lower():
             r = requests.get(f"https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey={newsapi}", params={"country": "in", "category": "business", "apiKey": newsapi},
@@ -137,6 +191,8 @@ def listen_for_command():
         audio = recognizer.listen(source, timeout=5, phrase_time_limit=6)
         return recognizer.recognize_google(audio)
 
+
+    # BANNER -----
 def banner():  
     banner = """
     ╔═══════════════════════════╗
@@ -146,6 +202,8 @@ def banner():
     """
     print(Fore.CYAN + banner)
 
+
+
 if __name__ == "__main__":
     banner()
     speak("Hey... I am Atlas.")
@@ -153,7 +211,7 @@ if __name__ == "__main__":
     while running:
         try:
             if listen_for_wake_word():
-                speak("Hello Arnav")
+                speak("Yes?")
                 try:
                     command = listen_for_command()
                     running = process_command(command)
