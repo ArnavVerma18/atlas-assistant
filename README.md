@@ -1,6 +1,6 @@
-# Atlas — Personal Voice Assistant
+# Atlas 
 
-[**Explore Atlas **](https://arnavverma18.github.io/atlas-assistant/)
+[Explore Atlas ](https://arnavverma18.github.io/atlas-assistant/)
 
 <i>Personal Voice Assistant • Python Powered • Built From Scratch</i>
 
