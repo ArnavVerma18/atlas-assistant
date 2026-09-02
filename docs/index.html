@@ -434,6 +434,68 @@
   @media (max-width: 700px) {
     .gallery { grid-template-columns: 1fr; }
   }
+
+  .gallery-item img { cursor: zoom-in; }
+
+  /* ---------- LIGHTBOX ---------- */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background: rgba(8, 11, 20, 0.85);
+    backdrop-filter: blur(16px);
+  }
+
+  .lightbox.open { display: flex; }
+
+  .lightbox-inner {
+    position: relative;
+    max-width: 1100px;
+    max-height: 85vh;
+    width: 100%;
+  }
+
+  .lightbox-inner img {
+    width: 100%;
+    height: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 40px 100px -30px rgba(139, 92, 246, 0.4);
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: -48px;
+    right: 0;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    color: var(--text);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .lightbox-close:hover { background: rgba(255,255,255,0.1); }
+
+  .lightbox-caption {
+    text-align: center;
+    margin-top: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+  }
   .stack-flow {
     display: flex;
     flex-wrap: wrap;
@@ -620,15 +682,15 @@
     </div>
     <div class="gallery">
       <div class="gallery-item wide">
-        <img src="screenshot-wake.png" alt="Atlas activating on the wake word and responding">
+        <img src="screenshot-wake.png" alt="Atlas activating on the wake word and responding" onclick="openLightbox(this)">
         <div class="gallery-caption">$ wake word detected — atlas responds</div>
       </div>
       <div class="gallery-item">
-        <img src="screenshot-command.png" alt="Atlas processing a voice command">
+        <img src="screenshot-command.png" alt="Atlas processing a voice command" onclick="openLightbox(this)">
         <div class="gallery-caption">$ processing a command</div>
       </div>
       <div class="gallery-item">
-        <img src="screenshot-response.png" alt="Atlas speaking a response aloud">
+        <img src="screenshot-response.png" alt="Atlas speaking a response aloud" onclick="openLightbox(this)">
         <div class="gallery-caption">$ response spoken aloud</div>
       </div>
     </div>
@@ -662,6 +724,14 @@
     <span>atlas — voice assistant</span>
     <span>MIT licensed</span>
   </footer>
+</div>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <div class="lightbox-inner">
+    <div class="lightbox-close" onclick="closeLightbox(event)">✕</div>
+    <img id="lightbox-img" src="" alt="">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
 </div>
 
 <script>
@@ -727,6 +797,34 @@
   }
 
   renderNext();
+
+  // lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+
+  function openLightbox(imgEl) {
+    lightboxImg.src = imgEl.src;
+    lightboxImg.alt = imgEl.alt;
+    const caption = imgEl.closest('.gallery-item').querySelector('.gallery-caption');
+    lightboxCaption.textContent = caption ? caption.textContent : '';
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(e) {
+    if (e.target.id === 'lightbox' || e.target.classList.contains('lightbox-close')) {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
 </script>
 
 </body>
