@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Atlas — Voice Assistant</title>
+<meta property="og:title" content="Atlas — Voice Assistant">
+<meta property="og:description" content="A wake-word activated Python voice assistant with website automation, Wikipedia lookups, and local music playback.">
+<meta property="og:image" content="https://arnavverma18.github.io/atlas-assistant/preview.png">
+<meta property="og:url" content="https://arnavverma18.github.io/atlas-assistant/">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -384,7 +389,51 @@
   .flow-text h3 { font-size: 1.12rem; font-weight: 600; margin-bottom: 8px; }
   .flow-text p { color: var(--text-dim); max-width: 54ch; font-size: 0.98rem; }
 
-  /* ---------- STACK ---------- */
+  /* ---------- SCREENSHOT GALLERY ---------- */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .gallery-item {
+    border-radius: 20px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .gallery-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 50px -20px rgba(139, 92, 246, 0.35);
+  }
+
+  .gallery-item img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-bottom: 1px solid var(--glass-border);
+  }
+
+  .gallery-caption {
+    padding: 16px 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+  }
+
+  .gallery-item.wide {
+    grid-column: 1 / -1;
+  }
+
+  .gallery-item.wide img { aspect-ratio: 21 / 9; }
+
+  @media (max-width: 700px) {
+    .gallery { grid-template-columns: 1fr; }
+  }
   .stack-flow {
     display: flex;
     flex-wrap: wrap;
@@ -560,6 +609,27 @@
           <h3>Speak the result</h3>
           <p>The response is converted to natural speech and played back, ready for the next command.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="screenshot">
+    <div class="section-head">
+      <div class="section-tag mono">// see it for real</div>
+      <h2>Running live in a terminal</h2>
+    </div>
+    <div class="gallery">
+      <div class="gallery-item wide">
+        <img src="screenshot-wake.png" alt="Atlas activating on the wake word and responding">
+        <div class="gallery-caption">$ wake word detected — atlas responds</div>
+      </div>
+      <div class="gallery-item">
+        <img src="screenshot-command.png" alt="Atlas processing a voice command">
+        <div class="gallery-caption">$ processing a command</div>
+      </div>
+      <div class="gallery-item">
+        <img src="screenshot-response.png" alt="Atlas speaking a response aloud">
+        <div class="gallery-caption">$ response spoken aloud</div>
       </div>
     </div>
   </section>
