@@ -2,6 +2,12 @@
 
 [**Explore Atlas **](https://arnavverma18.github.io/atlas-assistant/)
 
+<i>Personal Voice Assistant • Python Powered • Built From Scratch</i>
+
+<img src="https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python&logoColor=white"> <img src="https://img.shields.io/badge/Version-1.0-cyan?style=for-the-badge"> <img src="https://img.shields.io/badge/Voice%20Assistant-ACTIVE-success?style=for-the-badge"> <img src="https://img.shields.io/badge/Status-In%20Development-orange?style=for-the-badge">
+
+<br><br>
+
 <p align="center">
   <img src="demo.gif" width="600" alt="Atlas demo"/>
 </p>
