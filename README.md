@@ -1,6 +1,6 @@
 <div align="center">
 <div align="center">
-<a href="https://arnavverma18.github.io/atlas-assistant/"> <img src="https://capsule-render.vercel.app/api?type=waving&color=0:080b14,100:16202b&height=200&section=header&text=Atlas&fontSize=58&fontColor=22d3ee&fontAlignY=40&desc=Voice%20Assistant&descSize=18&descAlignY=65&descColor=8b8fa3" /> </a>
+<a href="https://arnavverma18.github.io/atlas-assistant/"> <img src="https://capsule-render.vercel.app/api?type=soft&color=0:0a0714,100:1a1030&height=190&text=Atlas&fontSize=55&fontColor=ffffff&fontAlignY=40&desc=Voice%20Assistant&descSize=18&descAlignY=68&descColor=8b5cf6" /> </a>
 </div>
 
 A wake-word activated Python voice assistant with website automation, Wikipedia lookups, and local music playback — built entirely from scratch, no cloud dashboard required.
