@@ -1,5 +1,7 @@
 <div align="center">
-
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8b5cf6,100:22d3ee&height=180&section=header&text=Atlas&fontSize=60&fontColor=ffffff&desc=Voice%20Assistant&descSize=20&descAlignY=65" />
+</div>
 # Atlas — Voice Assistant
 
 A wake-word activated Python voice assistant with website automation, Wikipedia lookups, and local music playback — built entirely from scratch, no cloud dashboard required.
