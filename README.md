@@ -121,5 +121,8 @@ MIT
 <br>
 
 <div align="center">
-<sub>Built by <a href="https://github.com/ArnavVerma18">Arnav Verma</a></sub>
+<sub>
+  <img src="https://github.com/favicon.ico" width="14" height="14" valign="middle">
+  Built by <a href="https://github.com/ArnavVerma18">Arnav Verma</a>
+</sub>
 </div>
