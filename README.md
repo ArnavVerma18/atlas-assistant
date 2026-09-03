@@ -122,7 +122,10 @@ MIT
 
 <div align="center">
 <sub>
-  <img src="https://github.com/favicon.ico" width="14" height="14" valign="middle">
-  Built by <a href="https://github.com/ArnavVerma18">Arnav Verma</a>
+Built by <a href="https://github.com/ArnavVerma18">Arnav Verma</a>
 </sub>
+<br><br>
+<a href="https://github.com/ArnavVerma18">
+  <img src="https://img.shields.io/badge/-ArnavVerma18-181717?style=flat-square&logo=github&logoColor=white" height="24">
+</a>
 </div>
