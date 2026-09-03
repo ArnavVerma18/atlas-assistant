@@ -8,9 +8,13 @@ A wake-word activated Python voice assistant with website automation, Wikipedia 
 ![License](https://img.shields.io/badge/license-MIT-lightgrey)
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
 
-[![GitHub](https://img.shields.io/badge/Code-GitHub-8b5cf6?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ArnavVerma18/atlas-assistant)
-[![Demo](https://img.shields.io/badge/Live-Demo-22d3ee?style=for-the-badge&logo=googlechrome&logoColor=white)](https://arnavverma18.github.io/atlas-assistant/)
-
+<p align="center">
+  <a href="https://arnavverma18.github.io/atlas-assistant/"><b>Live Demo</b></a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/ArnavVerma18/atlas-assistant"><b>Source</b></a>
+  &nbsp;·&nbsp;
+  <a href="#setup"><b>Setup</b></a>
+</p>
 </div>
 
 <br>
