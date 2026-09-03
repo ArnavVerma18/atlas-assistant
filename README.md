@@ -8,7 +8,9 @@ A wake-word activated Python voice assistant with website automation, Wikipedia 
 ![License](https://img.shields.io/badge/license-MIT-lightgrey)
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-View%20Site-8b5cf6?style=for-the-badge)](https://arnavverma18.github.io/atlas-assistant/)
+<a href="https://arnavverma18.github.io/atlas-assistant/">
+  <img src="https://img.shields.io/badge/Live%20Demo-View%20Site-8b5cf6?style=flat-square" height="40">
+</a>
 <br>
 
 ## What it does
