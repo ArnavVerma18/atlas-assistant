@@ -19,8 +19,8 @@ Atlas listens for a spoken wake word, transcribes what you say, and routes it th
 
 <table>
   <tr>
-    <td><img src="assets/screenshot-wake.png" width="100%"></td>
-    <td><img src="assets/screenshot-command.png" width="100%"></td>
+    <td><img src="docs/screenshot-wake.png" width="100%"></td>
+    <td><img src="docs/screenshot-command.png" width="100%"></td>
   </tr>
   <tr>
     <td align="center"><sub>Wake word detected — Atlas responds</sub></td>
