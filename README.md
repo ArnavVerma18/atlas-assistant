@@ -1,7 +1,6 @@
 <div align="center">
 <div align="center">
- <a href="https://arnavverma18.github.io/atlas-assistant/"> <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8b5cf6,100:22d3ee&height=220&section=header&text=Atlas&fontSize=60&fontColor=ffffff&fontAlignY=42&desc=Voice%20Assistant&descSize=20&descAlignY=62" /> </a>
-
+ <a href="https://arnavverma18.github.io/atlas-assistant/"> <img src="https://capsule-render.vercel.app/api?type=cylinder&color=0:8b5cf6,100:22d3ee&height=200&text=Atlas&fontSize=55&fontColor=ffffff&fontAlignY=42&desc=Voice%20Assistant&descSize=18&descAlignY=64" /> </a>
 <br><br>
 </a>
 </div>
