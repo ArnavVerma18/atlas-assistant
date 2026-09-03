@@ -120,6 +120,7 @@ python atlas.py
 MIT
 
 <br>
+<div align="center"> <sub>⭐ Found this useful? <a href="https://github.com/ArnavVerma18/atlas-assistant">Star the repo</a> — it genuinely helps.</sub> </div>
 
 <div align="center">
 <sub>
